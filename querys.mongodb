@@ -1,14 +1,12 @@
 use('commerce');
 
-db.produtos.updateMany({},
-{$set: {
-  'criadoPor': 'Ronald McDonald'
-}})
-
-db.produtos.find({}, {
+db.produtos.find({
+    ingredientes: {$all: ['picles']}
+}, {
   _id: 0,
   nome: 1,
-  criadoPor: 1
+  ingredientes: 1,
+  valoresNutricionais: { $slice: 3 }
 })
 
 // db.produtos.find();
