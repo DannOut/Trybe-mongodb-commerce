@@ -1,7 +1,11 @@
 use('commerce');
 
-db.produtos.deleteMany({}, {
-ingredientes: { $all: ['cebola']}
-})
+db.produtos.update({
+  nome: "Quarteirão com Queijo"
+}, $pop: { ingredients: -1})
 
-db.produtos.find({}. {_id: 0, nome: 1, ingredientes: 1});
+db.produtos.find({}, {
+  _id: 0,
+  nome: 1,
+  ingredients: 1
+})
