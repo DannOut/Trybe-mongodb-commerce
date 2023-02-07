@@ -1,2 +1,2 @@
-db.produtos.find().count();
-// db.produtos.countDocuments();
+// db.produtos.find().count();
+db.produtos.countDocuments({});
