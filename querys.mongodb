@@ -1,9 +1,7 @@
 use('commerce');
 
-db.Produtos.updateMany({
-  nome: {$in: [ 'Big Mac', 'Quarteirão com Queijo']},},
-{ $push: { ingredientes: 'bacon' }});
+db.produtos.deleteMany({}, {
+ingredientes: { $all: ['cebola']}
+})
 
-db.produtos.find({}, { _id: 0, nome: 1, ingredientes: 1})
-
-// db.produtos.find();
+db.produtos.find({}. {_id: 0, nome: 1, ingredientes: 1});
